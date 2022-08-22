@@ -333,6 +333,84 @@ To see the contents of the file "/BE/file1.txt" use cat command.
 
 #cat /BE/file1.txt
 
+################################
+Manual pages 
+page 1 - /bin or /usr/bin (Binary file)
+
+Eg:
+$ which cp 
+/usr/bin/cp 
+
+$ man 1 cp 
+press "/" for search 
+/"-r"   press enter 
+then press "n" for next search and continue 
+then press "N" for previous search and continue 
+then press "G" for last line 
+then press "g" for 1st line.
+
+
+Manual pages 
+page 8 - /sbin or /usr/sbin (Binary file)
+Eg:
+
+# which useradd 
+/usr/sbin/useradd 
+# man 8 useradd 
+
+press "/" for search 
+/"-r"   press enter 
+then press "n" for next search and continue 
+then press "N" for previous search and continue 
+then press "G" for last line 
+then press "g" for 1st line.
+
+==================
+--help option 
+
+# useradd --help 
+# cp --help 
+
+To know basic idea about command or utility 
+
+# whatis <command>
+Eg:
+
+# whatis useradd 
+# whatis mkdir 
+# whatis cp 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
   
