@@ -1,0 +1,137 @@
+
+Phase-01-Introduction to Linux vs Enterprise Linux 
+
+Linux Session
+ - What is Linux ?
+   It's an Operating System (Eng Like - Windows/Mac/etc).
+
+ - What is Operating System (w.r.t Computer --> Server)?
+   Operating System is a software, which manage hardware.
+   Operating system used for optimum or maximum utilization of hardware (Where it is installed).   
+   
+ - Operating System (Types of OS)?
+    Unix 
+	Linux 
+	Window 
+	Mac 
+
+ - What is Server ?
+   Who serve the service (Service over WEB - via http/https etc).
+   
+   Eg:-
+   When Enterprise Linux, installed on IBM/Dell/HP/Cisco hardware(Server)
+   Hardware(Server) - Standalone server or Blade server, etc.
+	
+	- Enterprise Linux (RHEL) installed on IBM blade server.
+	- Then deploy banking/Madical/etc domain applications on it.
+	- Now it serve the mentioned service.
+	
+ - Components of Operating System.
+   1.Users (Admin User = root, Normal user = john , System User = apache)
+     You can login as root or normal user.
+	 And normal user can also have admin acces via "sudo".
+	 Any command execution (if you place sudo before that, it mean it will execute as Admin/eoor account).
+	 
+	 
+   2.Interface (GUI or CLI).
+     Enterprise Linux (RHEL) - GUI part -  GNOME (GNU Network Object Model Environment).
+	 Enterprise Linux (RHEK) - CLI part -  bash, sh, ksh, tcsh 
+   
+   
+   3.Kernel (Core of OS)   
+     
+
+ - Multiple Linux Distrubution.
+  Red Hat Enterprise Linux 
+  Fedora 
+  CentOS 
+  Suse Enterprise Linux 
+  Amazone Linux 
+  etc 
+  
+  Red Hat Enterprise Linux, Multiple versions are running in production.
+  RHEL6
+  RHEL7
+  RHEL8 
+  RHEL9
+  
+  https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux
+  
+  
+Phase-02 - Introduction to Basic Linux COmmands and Directory Structure.
+
+
+ Basic commands
+ 
+ $ pwd
+ $ whoami 
+ $ date 
+ $ uptime 
+ $ cal 
+ 
+ $ which <command>
+ Eg:
+ $ which pwd
+ /usr/bin/pwd 
+ 
+ $ which whoami 
+ /usr/bin/whoami 
+ Called absolute path of the command.
+ 
+ 
+- Users explaination 
+1) Admin user (root), #
+2) NOrmal user (john), $
+3) System user (apache) , unable to login to system.
+ 
+ 
+ The file-system Hierarchy 
+ Level 1st   - root "/" - Directory (folder).
+
+ /bin - All commands, used by normal user are placed in "/bin" 
+ /sbin - Admin users commands 
+ 
+ #which pwd
+ /usr/bin/pwd 
+ 
+ # which useradd 
+ /usr/sbin/useradd 
+ 
+ "/usr" 
+ 
+===================
+ Login to your cloud lab.
+ Cridentials given to you.
+ 
+ root/Admin@123 
+ # whoami 
+ root 
+ # useradd user1 
+ # password user1 
+
+ # su - user1
+password: user1 
+$ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
