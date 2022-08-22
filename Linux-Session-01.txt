@@ -282,6 +282,75 @@ Phase-03
  cd /ORG/HR/dep01 then copy below task.
  - file6.txt to dep02 of Sales 
  
+ =================================================
+ copy - cp command 
+ cut  - mv command  (move)
+ rm - remove file/directories/folders
+ tree - check the tree structure 
+
+ 
+ 
+ rm -rf / BE   (Big mistake - Result - OS crashed, very hard to recover).
+ 
+ rm - command 
+ 
+ -r - option 1st (recursive delete)
+ -f - option 2nd (forcefully - this option will not ask - Are you sure ?)
+ 
+ "/"    - 1st argument 
+ "BE"   - 2nd argument 
+ 
+ Note: ** 
+  1st Argument is valid "/" 
+  2nd argument is invalid "BE"   (BE you have created in "/" so location of BE is "/BE").
+  
+  
+==========================================
+ To create file using text editor (vim).
+
+# vim /BE/file1.txt     (Give "Enter")
+Now press "i" key - for insert mode     - Your action 
+
+Now type anything you want
+This is my 2nd line 
+This is my 3rd line 
+  
+Once you have done
+Now press "esc" key - for lock mode enabled  - Your action 
+Then type below instruction.
+
+:wq  - Write and quit    
+or    
+:w  - Only write 
+or
+q   - Only quit with save 
+or
+wq! - Write and quit forcefully.
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+ 
+ 
+ 
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
  
  
   
