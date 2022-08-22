@@ -230,6 +230,68 @@ Phase-03
  NOte: It will show you error 
  # tree /Project 
  
+ == Command concepts 
+ # Command Option Arguments 
+ 
+ What is Command ("/bin or /usr/bin" and "/sbin or /usr/sbin" and "/usr/local/bin or /usr/local/sbin").
+ Command is utility, used for to perform some action.
+ 
+ What is an Option?
+ Option is used for to modify the behavious of the command 
+ 
+ What is an Arguments?
+  Arguments is the data needed or required to execute the command.
+ 
+  # mkdir /Project 
+  # cd /Porject 
+  # pwd
+  /Project 
+  # ls -l        
+  # mkdir dir1 
+  # touch file1 
+  # cp file1 dir1 
+  
+  # mkdir dir2 
+  # cp dir1 dir2 
+  
+  # cp -r dir1 dir2 
+  
+  cp - COmmand 
+  -r - Option 
+  dir1 - 1st argument
+  dir2 - 2nd argument 
+ =========================================
+ # mkdir -p /ORG/{IT,HR,Sales}/{dep-01,dep02}
+ # cd /ORG 
+ # touch file1.txt file2.txt file3.txt
+ 
+ Now copy using Absolute path 
+ - file1.txt to dep02 of IT 
+ - file2.txt to dep01 of HR
+ - file3.txt to dep02 of Sales 
+ 
+ # touch file4.txt file5.txt file6.txt
+  Now copy using Relative path 
+  
+  cd /ORG/HR/dep02 then copy below task.
+ - file4.txt to dep02 of IT 
+ 
+ cd /ORG/IT/dep01 then copy below task.
+ - file5.txt to dep01 of HR
+ 
+ cd /ORG/HR/dep01 then copy below task.
+ - file6.txt to dep02 of Sales 
+ 
+ 
+ 
+  
+  
+  
+  
+  
+  
+ 
+ 
   
   
   
