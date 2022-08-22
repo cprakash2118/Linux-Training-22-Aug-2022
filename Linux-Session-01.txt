@@ -99,19 +99,36 @@ Phase-02 - Introduction to Basic Linux COmmands and Directory Structure.
  
  "/usr" 
  
-===================
+===================#################################
  Login to your cloud lab.
  Cridentials given to you.
- 
  root/Admin@123 
+ 
+ 
+ Login as root.
+ Note: If you have login as some other user like (server) then logint o root using below methond.
+ $ whoami 
+ $ su - root 
+ password: Admin@123
  # whoami 
  root 
+ 
+ Now create user as per below.
+ 
  # useradd user1 
  # password user1 
 
- # su - user1
-password: user1 
-$ 
+Note: Keep the password same for all users - "Admin@123"
+
+Now move to user1 and verify the account.
+
+ # su - user1 
+
+ $ whoami 
+ $ useradd user2 
+ Permission denied (it mean only "root" user can create users using useradd command).
+
+ NOte: useradd command belongs to the location - /usr/sbin/useradd  
 
 
  
