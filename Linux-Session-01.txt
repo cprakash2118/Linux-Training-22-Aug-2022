@@ -128,7 +128,122 @@ Now move to user1 and verify the account.
  $ useradd user2 
  Permission denied (it mean only "root" user can create users using useradd command).
 
- NOte: useradd command belongs to the location - /usr/sbin/useradd  
+ NOte: useradd command belongs to the location - /usr/sbin/useradd 
+ ===================###################
+ "/" - root directory 
+   - bin  or  (/bin) 
+   - /usr/bin 
+   
+   - sbin or  (/sbin)
+   - /usr/sbin 
+   
+   1. "/bin" 
+   2. "/sbin"  
+   3. "/usr"  ("/usr/bin" & "/usr/sbin").
+   
+   
+   Eg: $ which pwd  (outcome is default)
+      /usr/bin/pwd   or /bin/pwd 
+	  
+	  
+	4. "/boot" - Boot related files (Grub, initramfs and Linux Kernel files).
+	5. "/dev" - all Device file placed here.
+	   eg:
+	      Disk - /dev/vda , /dev/vdb , /dev/vdc
+	6. "/etc"  - All services configuration files.
+	7. "/home" user's home directory by default
+	8. "/root" - home dir for "root" user - Admin user.
+	9. "/run" - Run time data will be saved/placed in this directory 
+	10. "/tmp" - all application use /tmp for deployment/function well.
+	11. "/var" - Variable data - 
+	
+======================
+ - Absolute path  - It always start with "/"
+ - Relative path  - It always not start with "/" 
+ 
+ # touch (it will create emptly file).
+ Eg: 
+  # touch file1.txt 
+  # touch file2.txt file3.txt 
+ 
+ 
+ # mkdir (it will create directory/folder)
+ Eg:
+  # mkdir dir1 
+  # mkdir dir2 dir3 dir4 
+ 
+  # cd (change Directory)
+  # cd /dirn_name  (it will take you inside "/dirn_name" 
+  # pwd 
+  /dirn_name
+  # cd .. (come out from one dir/folder from your current dir)
+  # cd ../.. (come out 2 steps back from your current working dir).
+  
+  # mkdir /BE
+  # cd /BE
+  #pwd
+  /BE
+  # mkdir CSE IT ECE ME 
+  # cd CSE 
+  pwd
+  /BE/CSE 
+  # mkdir 1st-year 2nd-year 3rd-year 4th-year 
+  # ls -l 
+  You will get detail about all directories/folders 
+  #pwd
+  /BE/CSE
+  #cd ..
+  #pwd
+  /BE
+  #cd IT
+  #pwd
+  /BE/IT 
+  
+  Repete this and get the output 
+  
+  
+  
+  
+  
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+   
+   
+   
+
+ 
 
 
  
