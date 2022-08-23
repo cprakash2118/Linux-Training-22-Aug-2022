@@ -159,7 +159,7 @@ $ cat file_name (show all the contents of the file).
  
  Note: 
  If you want to add multiple suplimentry group then 
- # useradd -a -G 2nd_group_name user_name
+ # usermod -a -G 2nd_group_name user_name
  
  # user add with comment 
  useradd -c "Test User" user-name 
