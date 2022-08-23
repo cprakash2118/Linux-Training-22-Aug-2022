@@ -218,6 +218,185 @@ $ cat file_name (show all the contents of the file).
  
  chage --help 
  and verify the same 
+ ==============
+ Quick recap of User and Group management:-
+ 
+ 
+ - useradd 
+  Eg: # useradd user1 
+      # useradd -g unixadm -G dba -c "Business COmment" user2 
+	  (useradd --help )
+	  
+ - userdel   (userdel -r user_name)
+  Eg: 
+     # userdel -r user3
+	  (userdel --help)
+ - usermod 
+  Eg:
+     # usermod -G unixadm -c "Updated comment" user4
+	 (usermod --help)
+ 
+ - groupadd 
+   Eg:
+     # groupadd -g 23988 unixadm 
+	 (groupadd --help).
+	 
+ - groupdel
+    Eg: 
+      # groupdel app1
+      (groupdel --help) 
+	  
+ - groupmod 
+    Eg:
+      # groupmod --help 
+	  
+ - passwd 
+ - password changes uning --stdin (echo password123 | passwd --stdin user-name).
+ - chage (chage --help ).
+
+======================================================================
+
+###########
+ Create users and Groups
+     Users               Groups   (User's comment)   2nd Group
+ user1 ot user5 -      unixadm    "Unix team"
+ user6-user10          dbadm        "DBA team"
+ user11 to 15          app1        "app1 team"    app2 
+ user16-user20         app2        "app2 team"    app1 
+ 
+ (userdel -r user-name)
+ 
+ Lab SOlution:-
+ # groupadd unixadm 
+ # groupadd dbadm
+ # groupadd app1 
+ # groupadd app2 
+ 
+ # useradd -g unixadm user1 
+ # useradd -g unixadm user2
+ and contune to user5
+ 
+ COntune for user6-10 
+ 
+ # useradd -g app1 -G app2 user11 
+ # useradd -g app1 -G app2 user12
+ # useradd -g app1 -G app2 user13
+ # useradd -g app1 -G app2 user14
+ # useradd -g app1 -G app2 user15
+  
+ Password you can use 
+ passwd 
+ Type passwd 
+ Taype passwd again.
+
+ or 
+ echo redhat | passwd --stdin user1 
+ ==================================
+ cat /etc/passwd | grep user 
+ cat /etc/group | egrep 'unix|dba|app'
+ cat /etc/shadow | grep user 
+ 
+ ls -l /etc/login.defs 
+ 
+ ==========================
+### Lab Solution
+
+Step-01 - 
+Group creation:-
+
+ # groupadd unixadm 
+ # groupadd dbadm 
+ # groupadd app1 
+ # groupadd app2 
+ 
+Verify - Group creation:- 
+ # cat /etc/group | grep unixadm 
+ # cat /etc/group | grep dbadm 
+ # cat /etc/group | grep app1
+ # cat /etc/group | grep app2 
+or 
+ # cat /etc/group | grep -E 'unixadm|dbadm|app1|app2'
+ 
+
+Step-02 -
+User Creation:- 
+ # useradd -g unixadm -c "UNIX team" user1
+ # useradd -g unixadm -c "UNIX team" user2
+ # useradd -g unixadm -c "UNIX team" user3
+ # useradd -g unixadm -c "UNIX team" user4
+ # useradd -g unixadm -c "UNIX team" user5
+ 
+Verify - user creation:-
+ # cat /etc/passwd | grep -E 'user1|user2|user3|user4|user5'
+or 
+ # cat /etc/passwd | grep ^user 
+ 
+ 
+Step-03 
+###
+Setup the password 
+
+Note: Before settting password for every user, update the required changes in "/etc/login.def" file"
+
+ # vim /etc/login.def
+ update the required changes.
+
+ # passwd user1 (type password and verify password - two time need to type password).
+ or 
+ # echo password123 | passwd --stdin user1 
+ # echo password123 | passwd --stdin user2
+ # echo password123 | passwd --stdin user3
+ # echo password123 | passwd --stdin user4
+ # echo password123 | passwd --stdin user5 
+
+ 
+ NOte: Continue the same for user6-10, user11-15 , user16-20.
+ 
+ ===============================  
+ Linux Permission model 
+ # mkdir /Project
+ # touch /permission.txt 
+ # ls -l /permission.txt
+ -rw-r--r-- root root 43567 /permission.txt
+ 
+ NOte: *** 
+  -rw-r--r-- (This is permission)
+
+==========================
+
+Create directory - "/project"
+Create sub directories - /project (UNIX DB APP1 APP2)
+Change the ownershift (owner and Group Owner both) 
+
+chown   root:project /project 
+chown root:unixadm /project/UNIX 
+chown root:dbadm /project/DB 
+chown root:app1 /project/APP1
+chown root:app1 /project/APP2
+
+chmod 770 /project
+chmod 770 /project/UNIX 
+chmod 770 /project/DB 
+chmod 770 /project/APP1
+chmod 770 /project/APP2
+
+
+user1-5      - "project" group 
+user6-10     - "project" group 
+
+and verify the access
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
