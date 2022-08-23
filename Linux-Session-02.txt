@@ -408,6 +408,29 @@ Delete all directories
 
 rm -rf /project 
 
+=====================================
+1. useradd    (man 8 useradd or useradd --help or useradd --help |less )
+2. userdel    (man 8 userdel or userdel --help or userdel --help |less )
+3. usermod    
+4. groupadd  
+5. groupmod 
+6. groupdel 
+7. chown   (chown owner:group_owner file/dir - Eg: chown root:project /project)
+8. chmod   (chmod permission file/dir - Eg: chmod 770 /project)
+9. passwd   (passwd user1 or echo password123 | passwd --stdin user1)
+
+
+ /etc/passwd     (man 5 passwd)
+ /etc/group      (man 5 group)
+ /etc/shadow     (man 5 shadow)
+ /etc/login.def  (man 5 login.def)
+
+
+========================================
+ 
+
+
+
 
 
 
