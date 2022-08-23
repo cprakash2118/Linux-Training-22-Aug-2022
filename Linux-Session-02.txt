@@ -172,6 +172,8 @@ $ cat file_name (show all the contents of the file).
  user11 to 15          app1        "app1 team"    app2 
  user16-user20         app2        "app2 team"    app1 
  
+ (userdel -r user-name)
+ 
  
  
  
