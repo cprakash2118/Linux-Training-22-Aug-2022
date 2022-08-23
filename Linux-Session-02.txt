@@ -205,6 +205,23 @@ $ cat file_name (show all the contents of the file).
  cat /etc/shadow | grep user 
  
  
+ ===================================
+ Min password - 0 
+ Maximum passwd expired - 90 days 
+ Warning days 13
+ acount expitred after 30 days wnen password expired
+ 
+ cat /etc/passwd |grep user1 
+ chage -l user1 
+ 
+ chage --help 
+ and verify the same 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
