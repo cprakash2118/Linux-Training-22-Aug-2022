@@ -1,0 +1,250 @@
+Day-02 
+Quick recap of Day-01 
+
+Phase-01 (Intruction to Linux or Enterprise Linux).
+
+- What is Linux? - OPerating System 
+- What is OPerating System  and it's major components?
+   User, GUI, CLI, Kernel, Hardware 
+- Users - root(admin user), john (normal user), apache (system user).
+- Interface (User used one of the interface (GUI or CLI) for to communicate with kernel, to effectively used it's hardware) 
+   - GUI - Graphical User Interface  (Linux - GNOME "GNU Object Model Environment").
+     Note: Search over internet using - Linux GNOME.
+   - CLI - Command Line interface (Linux - Bash, sh , tcsh , ksh , csh etc).
+     Note: Bash is default shell for RHEL and it's more effective.
+- Kernel - Core of operating system, it's set of libraries and bineries.
+           Note: Kernel used for optimum or maximum utilization of servers/system.
+- Hardware - w.=ith respect to servers (IBM/HP/DELL/CISCO etc servers like - Blade servers).
+
+ Outcome of this discussion - RHEL version X (6/7/8/9) installed on Server, then over this OS application deployed and server will continue to serve accross zones.
+ 
+- Linux Distribution:-
+  REHL(As per this Training we consider RHEL, and it's highly used also - almost 70-90% - Bcoz of Strong vendor support).
+  CentOS 
+  Fedora 
+   Ubuntu 
+   Enterprise SUSE 
+   OPen SUSE 
+   Debian etc 
+   
+- Phase-02 (Introduction to Basic commands and concepts).
+
+ Basic commands and concepts:-
+  Command Option Argument 
+  
+  mkdir - Directory creation (-p option used).
+  touch - file creation (Empty file)
+  cd command
+   - cd Directory_name  (move inside the directory/folder).
+   - cd .. (come out 1 step back from current working dir).
+   - cd ../.. (come out 2 steps back from current working dir).
+   - cd - (move to previous directory/folder).
+   - cd (just enter "cd" command take you to logged in user's home directory).
+  cp - copy the file/dir from source to destination.
+  cp -rv dir1 dir2 (dir1 is source, dir2 is destination).
+  tree 
+  pwd
+  ls or ls -l (ll)
+  whoami 
+  mv (cut, same as copy command "cp").
+  rm (rm -rf "explained)
+  
+ - Paths (Absolute and Relative path).
+  Absolute path always start with "/" 
+  And Relative path never start with "/" 
+  
+  NOte: It's strongly recommended to use Absolute path.
+  Note: Relative path mostly used for quick work (individual purpose).
+
+- Linux directory Structure 
+  1st level - "/"
+  2nd level - boot, bin, sbin, usr, home, root, run , var, tmp , dev etc 
+  
+  boot location (/boot)
+  Everything inside "/" 
+
+- Manual pages 
+  page 1  - /bin or /usr/bin 
+  page 5  - configuration file 
+  page 8  - /sbin or /usr/sbin 
+  
+  Eg:-
+  1. $ man 1 cp 
+  2. $ man 5 passwd  (/etc/passwd file)
+  3. $ man 8 useradd (man useradd also, it will take you to "man 8 useradd" only).
+  
+  
+- help option 
+ useradd --help 
+
+- test editor (vim)
+$ vim file_name (Press Enter)
+press key "i" - insert mode.
+
+This is my 1st line 
+This is my 2nd line 
+This is my 3rd line ... and continue 
+
+press key "esc" - for lock mode 
+then press 
+:wq 
+
+
+- cat to view the contents of file.
+$ cat file_name (show all the contents of the file).
+
+===========================================================
+
+  User and Group management:- 
+  
+ Eg:- 
+  User 
+  GUI 
+  CLI 
+  Kernel 
+  Hardware
+  
+  Users (3 types)
+  1. root user 
+     Admin or Administrator - In linux (all Linux) - root is the default admin account.
+     NOte: ***
+		- We can not create root account, at the time of installation of Linux OS, it will ask for set the password.
+		- root account is also called super user account.
+		- Every user associated with unique User ID (UID) and root having "0".
+		- root account/user when logged in to system/server it's prompt should be with "#" sign.
+		- root account/user's home directory is "/root" 
+		
+  2. NOrmal User 
+        - Any user created by root user and that user is/are able to login then it's normal user.
+	    - Normal user's UID start with "1000" in RHEL os.
+	    - Normal account/user when logged in to system/server it's prompt should be with "$" sign.
+		- NOrmal account/user's home directory is "/home/user-name"
+		
+		NOte: ***
+		- Use "whoami , pwd, echo $USER etc" commands to findout the logged in user to the server.
+		- NOrmal account/user can also be a admin using sudo (sudo user).
+
+
+  3. System user:- 
+       - When you install/deploy application/service then sometime application/service are also associated with user account, that user account is aacountable for complete management of the application/service.
+	   - system user/account UID less than 1000
+	   - Using system user/account you can not be able to login (ALL system user having no login shell /sbin/nologin).
+	   
+	   
+======================
+ - When you execute useradd or below command as root user.
+ # useradd user-name 
+ Eg:
+ # useradd john 
+ 
+ 
+ 
+ /etc/passwd 
+ /etc/group 
+ /etc/shadow 
+
+ /home/user-name 
+ /home/user-name/.bash* (.bashrc, .bash_profile, .bash_histry file ).
+ /var/spool/mail/user-name 
+ 
+ =======================================
+ Below commands execution via root user login only.
+ # useradd user_name 
+ # passwd user_name 
+ 
+ # groupadd group_name 
+ 
+ # useradd -g group_name user_name  (adding user "user_name" to primary group "group_name")
+ # useradd -G group_name user_name  (adding user "user_name" to suplimentry group "group_name")
+ 
+ Note: 
+ If you want to add multiple suplimentry group then 
+ # useradd -a -G 2nd_group_name user_name
+ 
+ # user add with comment 
+ useradd -c "Test User" user-name 
+ 
+ ###########
+ Create users and Groups
+     Users               Groups   (User's comment)   2nd Group
+ user1 ot user5 -      unixadm    "Unix team"
+ user6-user10          dba         "DBA team"
+ user11 to 15          app1        "app1 team"    app2 
+ user16-user20         app2        "app2 team"    app1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	   
+	   
+	  
+		
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   
+   
+   
+   
+   
+   
+  
+   
+   
+   
+   
+   
