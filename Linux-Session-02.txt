@@ -204,6 +204,8 @@ $ cat file_name (show all the contents of the file).
  cat /etc/group | egrep 'unix|dba|app'
  cat /etc/shadow | grep user 
  
+ ls -l /etc/login.defs 
+ 
  
  ===================================
  Min password - 0 
@@ -216,6 +218,12 @@ $ cat file_name (show all the contents of the file).
  
  chage --help 
  and verify the same 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
