@@ -427,6 +427,34 @@ rm -rf /project
 
 
 ========================================
+Process Management:- 
+  - What is process ?
+    When Program under execution called process.
+	
+  When process created (It means when program executed), it's associated with process ID, Parent Process ID, UID or one more more GID etc.
+  Process ID for to tract the event (security point of view).
+  
+  Process state:- 
+    Running Process:- 
+	- The flag used for running process "R".
+	- Any process defined in running state when process utilizing or involved with CPU part.
+	
+	Sleeping Process :-
+	- The flag used for running process "s", "K" , "D" ,"I".
+    Stopped Process  :- 
+    Zombi Process    :- 	
+  
+  - Listing of the process.
+  
+  # ps -aef 
+  
+  Note: Top 10 processess consuming high CPU.
+  
+  # ps -eo pcpu,ppid,pid,user,stat,nice,comm | head -1 ; ps -eo pcpu,ppid,pid,user,stat,nice,comm | sort -nr | head 
+  
+  
+  
+  
  
 
 
