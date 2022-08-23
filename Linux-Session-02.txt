@@ -384,7 +384,51 @@ chmod 770 /project/APP2
 user1-5      - "project" group 
 user6-10     - "project" group 
 
-and verify the access
+and verify the access.
+
+
+
+
+Delete all users (user1 to user20).
+===============
+for x in {1..20}
+do
+userdel -r user$x 
+done 
+
+
+Delete all groups.
+============
+for x in unixadm dbadm app1 app2 
+do
+groupdel $x 
+done 
+
+Delete all directories
+
+rm -rf /project 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
