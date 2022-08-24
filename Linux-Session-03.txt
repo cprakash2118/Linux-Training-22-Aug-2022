@@ -120,6 +120,232 @@ Then type (:wq) and interface.
 
 #cat file1.txt
 
+===========================================================
+
+  User and Group management:- 
+  
+ Eg:- 
+  User 
+  GUI 
+  CLI 
+  Kernel 
+  Hardware
+  
+  Users (3 types)
+  1. root user 
+     Admin or Administrator - In linux (all Linux) - root is the default admin account.
+     NOte: ***
+		- We can not create root account, at the time of installation of Linux OS, it will ask for set the password.
+		- root account is also called super user account.
+		- Every user associated with unique User ID (UID) and root having "0".
+		- root account/user when logged in to system/server it's prompt should be with "#" sign.
+		- root account/user's home directory is "/root" 
+		
+  2. NOrmal User 
+        - Any user created by root user and that user is/are able to login then it's normal user.
+	    - Normal user's UID start with "1000" in RHEL os.
+	    - Normal account/user when logged in to system/server it's prompt should be with "$" sign.
+		- NOrmal account/user's home directory is "/home/user-name"
+		
+		NOte: ***
+		- Use "whoami , pwd, echo $USER etc" commands to findout the logged in user to the server.
+		- NOrmal account/user can also be a admin using sudo (sudo user).
+
+
+  3. System user:- 
+       - When you install/deploy application/service then sometime application/service are also associated with user account, that user account is aacountable for complete management of the application/service.
+	   - system user/account UID less than 1000
+	   - Using system user/account you can not be able to login (ALL system user having no login shell /sbin/nologin).
+	   
+	   
+======================
+ - When you execute useradd or below command as root user.
+ # useradd user-name 
+ Eg:
+ # useradd john 
+ 
+ 
+ 
+ /etc/passwd 
+ /etc/group 
+ /etc/shadow 
+
+ /home/user-name 
+ /home/user-name/.bash* (.bashrc, .bash_profile, .bash_histry file ).
+ /var/spool/mail/user-name 
+ 
+ =======================================
+ Below commands execution via root user login only.
+ # useradd user_name 
+ # passwd user_name 
+ 
+ # groupadd group_name 
+ 
+ # useradd -g group_name user_name  (adding user "user_name" to primary group "group_name")
+ # useradd -G group_name user_name  (adding user "user_name" to suplimentry group "group_name")
+ 
+ Note: 
+ If you want to add multiple suplimentry group then 
+ # usermod -a -G 2nd_group_name user_name
+ 
+ # user add with comment 
+ useradd -c "Test User" user-name 
+ 
+ ###########
+ Create users and Groups
+     Users               Groups   (User's comment)   2nd Group
+ user1 ot user5 -      unixadm    "Unix team"
+ user6-user10          dba         "DBA team"
+ user11 to 15          app1        "app1 team"    app2 
+ user16-user20         app2        "app2 team"    app1 
+ 
+ (userdel -r user-name)
+ 
+ Lab SOlution:-
+ # groupadd unixadm 
+ # groupadd dba
+ # groupadd app1 
+ # groupadd app2 
+ 
+ # useradd -g unixadm user1 
+ # useradd -g unixadm user2
+ and contune to user5
+ 
+ COntune for user6-10 
+ 
+ # useradd -g app1 -G app2 user11 
+ # useradd -g app1 -G app2 user12
+ # useradd -g app1 -G app2 user13
+ # useradd -g app1 -G app2 user14
+ # useradd -g app1 -G app2 user15
+  
+ Password you can use 
+ passwd 
+ Type passwd 
+ Taype passwd again.
+
+ or 
+ echo redhat | passwd --stdin user1 
+ ==================================
+ cat /etc/passwd | grep user 
+ cat /etc/group | egrep 'unix|dba|app'
+ cat /etc/shadow | grep user 
+ 
+ ls -l /etc/login.defs 
+ ===========================================================
+
+  User and Group management:- 
+  
+ Eg:- 
+  User 
+  GUI 
+  CLI 
+  Kernel 
+  Hardware
+  
+  Users (3 types)
+  1. root user 
+     Admin or Administrator - In linux (all Linux) - root is the default admin account.
+     NOte: ***
+		- We can not create root account, at the time of installation of Linux OS, it will ask for set the password.
+		- root account is also called super user account.
+		- Every user associated with unique User ID (UID) and root having "0".
+		- root account/user when logged in to system/server it's prompt should be with "#" sign.
+		- root account/user's home directory is "/root" 
+		
+  2. NOrmal User 
+        - Any user created by root user and that user is/are able to login then it's normal user.
+	    - Normal user's UID start with "1000" in RHEL os.
+	    - Normal account/user when logged in to system/server it's prompt should be with "$" sign.
+		- NOrmal account/user's home directory is "/home/user-name"
+		
+		NOte: ***
+		- Use "whoami , pwd, echo $USER etc" commands to findout the logged in user to the server.
+		- NOrmal account/user can also be a admin using sudo (sudo user).
+
+
+  3. System user:- 
+       - When you install/deploy application/service then sometime application/service are also associated with user account, that user account is aacountable for complete management of the application/service.
+	   - system user/account UID less than 1000
+	   - Using system user/account you can not be able to login (ALL system user having no login shell /sbin/nologin).
+	   
+	   
+======================
+ - When you execute useradd or below command as root user.
+ # useradd user-name 
+ Eg:
+ # useradd john 
+ 
+ 
+ 
+ /etc/passwd 
+ /etc/group 
+ /etc/shadow 
+
+ /home/user-name 
+ /home/user-name/.bash* (.bashrc, .bash_profile, .bash_histry file ).
+ /var/spool/mail/user-name 
+ 
+ =======================================
+ Below commands execution via root user login only.
+ # useradd user_name 
+ # passwd user_name 
+ 
+ # groupadd group_name 
+ 
+ # useradd -g group_name user_name  (adding user "user_name" to primary group "group_name")
+ # useradd -G group_name user_name  (adding user "user_name" to suplimentry group "group_name")
+ 
+ Note: 
+ If you want to add multiple suplimentry group then 
+ # usermod -a -G 2nd_group_name user_name
+ 
+ # user add with comment 
+ useradd -c "Test User" user-name 
+ 
+ ###########
+ Create users and Groups
+     Users               Groups   (User's comment)   2nd Group
+ user1 ot user5 -      unixadm    "Unix team"
+ user6-user10          dba         "DBA team"
+ user11 to 15          app1        "app1 team"    app2 
+ user16-user20         app2        "app2 team"    app1 
+ 
+ (userdel -r user-name)
+ 
+ Lab SOlution:-
+ # groupadd unixadm 
+ # groupadd dba
+ # groupadd app1 
+ # groupadd app2 
+ 
+ # useradd -g unixadm user1 
+ # useradd -g unixadm user2
+ and contune to user5
+ 
+ COntune for user6-10 
+ 
+ # useradd -g app1 -G app2 user11 
+ # useradd -g app1 -G app2 user12
+ # useradd -g app1 -G app2 user13
+ # useradd -g app1 -G app2 user14
+ # useradd -g app1 -G app2 user15
+  
+ Password you can use 
+ passwd 
+ Type passwd 
+ Taype passwd again.
+
+ or 
+ echo redhat | passwd --stdin user1 
+ ==================================
+ cat /etc/passwd | grep user 
+ cat /etc/group | egrep 'unix|dba|app'
+ cat /etc/shadow | grep user 
+ 
+ ls -l /etc/login.defs 
+ 
+
 
 
 
