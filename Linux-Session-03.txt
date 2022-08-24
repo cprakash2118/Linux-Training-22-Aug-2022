@@ -411,6 +411,104 @@ usermod -a -G project user1 (user1 to user20).
 
 and verify the access.
  
+ ======================
+ SUID - Special User ID permission
+ SGID - Special Group ID permission
+ Stickey Bit - Only owern and root can delete the file/dir.
+ 
+ 
+ SUID - Special User ID permission:-
+ When setting/applying SUID on any executable file then that file will execute as owern/root ownership.
+ 
+ chmod 4755 /usr/bin/touch 
+ ls -l /usr/bin/touch 
+ -rwsr-xr-x root root 87687 /usr/bin/touch
+ 
+ -    (This mean it's a file)
+ rws  (permission for owenr, and in place of "x" it's "s" it mean SUID set on "/usr/bin/touch" and the ower of this file is root).
+  
+   Owern of this file is "root"
+   Groupowner of this file is "root"
+   Other users also can execute this file.
+   
+   Anyone can execute this file and it will be executed as "root" user as SUID set on the file.
+   
+   # chmod 4755 executable_file_name 
+   # chmod u-s executable_file_name or chmod 755 executable_file_name
+   
+   
+   
+   SGID - When SGID set on any directory then in future any file/dir will automatically hold the same group ownership.
+   
+   #chmod 2770 dir_name 
+   #chmod g-s dir_name or chmod 770 dir_name 
+   
+   
+   Stickey bit mean only root or owner of the file/dir can delete the file/dir.
+   
+   #chmod 1777 /project/UNIX 
+   
+   Example of Stickey bit is already setup w.r.t "/tmp" file system.
+   
+===========================================================
+ Lab exe:-
+ 
+Create directory - "/project"
+Create sub directories - /project (UNIX DB APP1 APP2)
+Change the ownershift (owner and Group Owner both)
+
+
+##
+Create Directory:-
+
+mkdir /project 
+mkdir -p /project/{UNIX DB APP1 APP2}
+
+###
+Setup required permission.
+chmod 770 /project
+chmod 770 /project/UNIX 
+chmod 770 /project/DB 
+chmod 770 /project/APP1
+chmod 770 /project/APP2
+
+
+##
+Change ownershift.
+chown   root:project /project 
+chown root:unixadm /project/UNIX 
+chown root:dbadm /project/DB 
+chown root:app1 /project/APP1
+chown root:app1 /project/APP2
+
+Create project group and assign group ownership "/project" to projet.
+
+##
+groupadd project 
+chown root:project /project 
+chmod 770 /project 
+Below user must be accessible.
+
+user1-5      - "project" group 
+user6-10     - "project" group 
+
+usermod -a -G project user1 (user10 and user15).
+
+Set SGID and Stickey bit all sub-directories inside "/project" and verify the same.
+
+
+chmod 3770 /project/*     (3 mean 2+1 - 2 belongs to SGID and 1 belongs to Stickey bit).
+=================================
+
+   
+   
+   
+   
+   
+   
+   
+  
+ 
  
  
  
