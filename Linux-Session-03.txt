@@ -1,0 +1,141 @@
+#######Quick recap - (Cover Day-01 and day02).
+#########################
+
+## Day-01
+Phase-01 (Intruction to Linux or Enterprise Linux).
+
+- What is Linux? - OPerating System 
+- What is OPerating System  and it's major components?
+   User, GUI, CLI, Kernel, Hardware 
+- Users - root(admin user), john (normal user), apache (system user).
+- Interface (User used one of the interface (GUI or CLI) for to communicate with kernel, to effectively used it's hardware) 
+   - GUI - Graphical User Interface  (Linux - GNOME "GNU Object Model Environment").
+     Note: Search over internet using - Linux GNOME.
+   - CLI - Command Line interface (Linux - Bash, sh , tcsh , ksh , csh etc).
+     Note: Bash is default shell for RHEL and it's more effective.
+- Kernel - Core of operating system, it's set of libraries and bineries.
+           Note: Kernel used for optimum or maximum utilization of servers/system.
+- Hardware - w.=ith respect to servers (IBM/HP/DELL/CISCO etc servers like - Blade servers).
+
+ Outcome of this discussion - RHEL version X (6/7/8/9) installed on Server, then over this OS application deployed and server will continue to serve accross zones.
+ 
+- Linux Distribution:-
+  REHL(As per this Training we consider RHEL, and it's highly used also - almost 70-90% - Bcoz of Strong vendor support).
+  CentOS 
+  Fedora 
+   Ubuntu 
+   Enterprise SUSE 
+   OPen SUSE 
+   Debian etc 
+   
+- Phase-02 (Introduction to Basic commands and concepts).
+
+ Basic commands and concepts:-
+  Command Option Argument 
+  
+  mkdir - Directory creation (-p option used).
+  touch - file creation (Empty file)
+  cd command
+   - cd Directory_name  (move inside the directory/folder).
+   - cd .. (come out 1 step back from current working dir).
+   - cd ../.. (come out 2 steps back from current working dir).
+   - cd - (move to previous directory/folder).
+   - cd (just enter "cd" command take you to logged in user's home directory).
+  cp - copy the file/dir from source to destination.
+  cp -rv dir1 dir2 (dir1 is source, dir2 is destination).
+  tree 
+  pwd
+  ls or ls -l (ll)
+  whoami 
+  mv (cut, same as copy command "cp").
+  rm (rm -rf "explained)
+  
+ - Paths (Absolute and Relative path).
+  Absolute path always start with "/" 
+  And Relative path never start with "/" 
+  
+  NOte: It's strongly recommended to use Absolute path.
+  Note: Relative path mostly used for quick work (individual purpose).
+
+- Linux directory Structure 
+  1st level - "/"
+  2nd level - boot, bin, sbin, usr, home, root, run , var, tmp , dev etc 
+  
+  boot location (/boot)
+  Everything inside "/" 
+
+- Manual pages 
+  page 1  - /bin or /usr/bin 
+  page 5  - configuration file 
+  page 8  - /sbin or /usr/sbin 
+  
+  Eg:-
+  1. $ man 1 cp 
+  2. $ man 5 passwd  (/etc/passwd file)
+  3. $ man 8 useradd (man useradd also, it will take you to "man 8 useradd" only).
+  
+  
+- help option 
+ useradd --help 
+
+- test editor (vim)
+$ vim file_name (Press Enter)
+press key "i" - insert mode.
+
+This is my 1st line 
+This is my 2nd line 
+This is my 3rd line ... and continue 
+
+press key "esc" - for lock mode 
+then press 
+:wq 
+
+
+- cat to view the contents of file.
+$ cat file_name (show all the contents of the file).
+===========================================
+# - root (admin user)
+$ - Normal user (created by root account).
+
+# whoami 
+root
+
+#pwd
+/root 
+
+#mkdir /project
+# cd /project
+#pwd
+/project 
+# vim file1.txt    (Press Enter)
+now press key "i" - for insert mode.
+
+Then type your 1st line.
+This is my 2nd line.
+This is my 3rd line and continue ...
+
+NOw press key "esc" - Lock the screen.
+Then type (:wq) and interface.
+
+
+#cat file1.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
