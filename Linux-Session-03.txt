@@ -500,6 +500,52 @@ Set SGID and Stickey bit all sub-directories inside "/project" and verify the sa
 chmod 3770 /project/*     (3 mean 2+1 - 2 belongs to SGID and 1 belongs to Stickey bit).
 =================================
 
+sudo user (normal user will have root level access).
+
+visudo (/etc/suoders)
+
+User and Group Management:-
+=========================
+
+####Concepts and Command (Task execution):-
+useradd   (man 8 useradd or useradd --help )
+userdel 
+usermod 
+groupadd 
+groupmod 
+groupdel 
+passwd 
+umask 
+chmod 
+chown 
+SUID  (4)
+SGID (2) 
+Sticky bit (1) 
+sudo concepts (visudo -> /etc/sudoers, man 5 sudoers).
+
+#### No of files involved with user and group management.
+
+ /etc/passwd 
+ /etc/group
+ /etc/shadow 
+ /etc/login.def
+ /etc/sudoers  
+#### Help from system to understand more about this.
+man 8 useradd 
+man 1 cp 
+man 5 sudoers 
+
+
+
+
+
+
+
+
+
+
+
+
    
    
    
