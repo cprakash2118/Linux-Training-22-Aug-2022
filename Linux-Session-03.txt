@@ -370,14 +370,17 @@ Unix/Linux Permission model:-
  
 Create directory - "/project"
 Create sub directories - /project (UNIX DB APP1 APP2)
-Change the ownershift (owner and Group Owner both) 
+Change the ownershift (owner and Group Owner both)
 
-chown   root:project /project 
-chown root:unixadm /project/UNIX 
-chown root:dbadm /project/DB 
-chown root:app1 /project/APP1
-chown root:app1 /project/APP2
 
+##
+Create Directory:-
+
+mkdir /project 
+mkdir -p /project/{UNIX DB APP1 APP2}
+
+###
+Setup required permission.
 chmod 770 /project
 chmod 770 /project/UNIX 
 chmod 770 /project/DB 
@@ -385,11 +388,21 @@ chmod 770 /project/APP1
 chmod 770 /project/APP2
 
 
+##
+Change ownershift.
+chown   root:project /project 
+chown root:unixadm /project/UNIX 
+chown root:dbadm /project/DB 
+chown root:app1 /project/APP1
+chown root:app1 /project/APP2
+
 Create project group and assign group ownership "/project" to projet.
 
+##
 groupadd project 
 chown root:project /project 
 chmod 770 /project 
+Below user must be accessible.
 
 user1-5      - "project" group 
 user6-10     - "project" group 
