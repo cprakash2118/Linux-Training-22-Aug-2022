@@ -354,6 +354,12 @@ Then type (:wq) and interface.
   
   chage --help 
  =======================================
+ to get the epoch value.
+ #epoch_sec=$(date +%s)
+ # epoch_hour=$(expr ${epoch_sec} / 3600)
+ # expr $epoch_hour / 24 
+ 
+ 
   
 
 
