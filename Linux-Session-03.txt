@@ -344,7 +344,17 @@ Then type (:wq) and interface.
  cat /etc/shadow | grep user 
  
  ls -l /etc/login.defs 
- 
+ =========================================
+  user1 to user5 
+  minimum days password expired - 3
+  Max days password expired - 80
+  password inactive in 15 days from (password expired
+  Warnin periou = 13 days 
+  Account expired after 17 days from day of password expired.  
+  
+  chage --help 
+ =======================================
+  
 
 
 
