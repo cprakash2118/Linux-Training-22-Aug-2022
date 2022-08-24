@@ -359,6 +359,48 @@ Then type (:wq) and interface.
  # epoch_hour=$(expr ${epoch_sec} / 3600)
  # expr $epoch_hour / 24 
  
+==============================================================
+Unix/Linux Permission model:-  
+ Linux security model moving around security of the file, in linux/Unix everything is file (Including hardware also).
+ 
+ # touch file1.txt 
+ # mkdir dir1 
+ ===============================
+ Lab exe:-
+ 
+Create directory - "/project"
+Create sub directories - /project (UNIX DB APP1 APP2)
+Change the ownershift (owner and Group Owner both) 
+
+chown   root:project /project 
+chown root:unixadm /project/UNIX 
+chown root:dbadm /project/DB 
+chown root:app1 /project/APP1
+chown root:app1 /project/APP2
+
+chmod 770 /project
+chmod 770 /project/UNIX 
+chmod 770 /project/DB 
+chmod 770 /project/APP1
+chmod 770 /project/APP2
+
+
+Create project group and assign group ownership "/project" to projet.
+
+groupadd project 
+chown root:project /project 
+chmod 770 /project 
+
+user1-5      - "project" group 
+user6-10     - "project" group 
+
+usermod -a -G project user1 (user1 to user20).
+
+and verify the access.
+ 
+ 
+ 
+ 
  
   
 
