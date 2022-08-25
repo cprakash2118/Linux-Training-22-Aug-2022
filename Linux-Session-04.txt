@@ -82,7 +82,8 @@ LAB-01
 ########
 LAB-02 
  useradd user21 ; echo "redhat" | passwd --stdin
- Login with user21 and check the processes and try to join them.
+ Login with user21 and check the processes and try to kill the pcesses.
+ 
   
   
   
