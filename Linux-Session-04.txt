@@ -138,6 +138,8 @@ Note: yum repo (mrepo.repo) file with "file" baseurl, when use file url then (fi
   # firewall-cmd --reload 
   
   # firewall-cmd --list-all 
+  # iptable -F
+  
   
   ############
   yum repo (mrepo.repo) file with "http" baseurl
