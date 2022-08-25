@@ -65,7 +65,9 @@
    - Listing proccess with priority,state, usages, etc).
    Below command gives you high CPU utilization. 
   # ps -eo pcpu,pid,ppid,user,nice,comm,stat |head - 1; ps -eo pcpu,pid,ppid,user,nice,commm,stat | sort -nr | head -10
-  
+ 
+#########
+LAB-01 
   Below command gives you high CPU utilization. 
   # top (Press key "1" then press "q" to quit the top session (Tom session for monitoring purpose).
   
@@ -76,7 +78,11 @@
   
   # kill -9 <pid of sha1sum>   (Repete 3 time, as per the ).
   
-  
+
+########
+LAB-02 
+ useradd user21 ; echo "redhat" | passwd --stdin
+ Login with user21 and check the processes and try to join them.
   
   
   
