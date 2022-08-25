@@ -72,9 +72,9 @@ LAB-01
   # top (Press key "1" then press "q" to quit the top session (Tom session for monitoring purpose).
   
   NOte: - Execute below command only 3 times 
-  # sha1sum & 
-  # sha1sum & 
-  # sha1sun &
+  # sha1sum /dev/zero & 
+  # sha1sum /dev/zero & 
+  # sha1sun /dev/zero &
   
   # kill -9 <pid of sha1sum>   (Repete 3 time, as per the ).
   
