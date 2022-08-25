@@ -115,7 +115,7 @@ Note: ONce copied then crate repo.
   
   [AppStream]
   Name = Red Hat Enterprise Linux version 8.1 
-  baseurl=file:///var/www/html/repo/rhel8.1/BaseOS
+  baseurl=file:///var/www/html/repo/rhel8.1/AppStream
   gpgcheck = 0
   enabled = 1
   
