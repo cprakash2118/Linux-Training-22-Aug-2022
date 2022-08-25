@@ -162,7 +162,9 @@ Note: yum repo (mrepo.repo) file with "file" baseurl, when use file url then (fi
   NOte: "192.168.226.129" - to get IP address  (This IP where you have configued YUM repo).
   
   # ifconfig |grep inet | grep 192 
-  
+  NOte: set "selinux" 0 , disable it 
+  setenforce 0 (DO it early only before installation).
+ ###############################  
   
   
   
