@@ -84,7 +84,22 @@ LAB-02
  useradd user21 ; echo "redhat" | passwd --stdin
  Login with user21 and check the processes and try to kill the pcesses.
  
+ 
+  -------
+  -  Below command gives you high memoery utilization. 
+  # ps -eo pmem,pid,ppid,user,nice,comm,stat |head - 1; ps -eo pmem,pid,ppid,user,nice,commm,stat | sort -nr | head -10
+  # free -m -t 
   
+
+
+######################### Package Management #############################
+
+Package - Software
+
+Login as root user.
+# mkdir   -p /var/www/html/repo/rhel8.1
+# cp -rv /run/media/root/RHEL8/*   /var/www/html/repo/rhel8.1/
+
   
   
   
