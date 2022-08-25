@@ -121,6 +121,9 @@ Note: ONce copied then crate repo.
   
   :wq
   
+  # yum clean all 
+  # yum repolist 
+  # yum install httpd -y   
   
   
   
