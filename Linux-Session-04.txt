@@ -121,9 +121,25 @@ Note: ONce copied then crate repo.
   
   :wq
   
-  # yum clean all 
+  # yum clean all          (This is for to clean or clear the chache) 
   # yum repolist 
   # yum install httpd -y   
+  
+  # firewall-cmd --list-all   
+  # systemctl start httpd 
+  # systemctl enable httpd 
+  
+  # systemctl start firewalld 
+  # systemctl status firewalld 
+  
+  
+  # firewall-cmd --permanent --add service=http 
+  # firewall-cmd --reload 
+  
+  # firewall-cmd --list-all 
+  
+  
+  
   
   
   
