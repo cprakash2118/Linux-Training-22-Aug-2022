@@ -104,18 +104,19 @@ Note: ONce copied then crate repo.
 
 # cd /etc/yum.repos.d/
 # ls -l
+
+Note: yum repo (mrepo.repo) file with "file" baseurl, when use file url then (file://<absolute_path_of_repo>).
 # vim mrepo.repo 
   press key "i" - insert mode.
   [BaseOS]
-  Name = Red Hat Enterprise Linux version 8.1 
-  baseurl=file:///var/www/html/repo/rhel8.1/BaseOS
+  name = Red Hat Enterprise Linux version 8.1 
+  baseurl = file:///var/www/html/repo/rhel8.1/BaseOS
   gpgcheck = 0
   enabled = 1
   
-  
   [AppStream]
-  Name = Red Hat Enterprise Linux version 8.1 
-  baseurl=file:///var/www/html/repo/rhel8.1/AppStream
+  name = Red Hat Enterprise Linux version 8.1 
+  baseurl = file:///var/www/html/repo/rhel8.1/AppStream
   gpgcheck = 0
   enabled = 1
   
@@ -138,6 +139,27 @@ Note: ONce copied then crate repo.
   
   # firewall-cmd --list-all 
   
+  ############
+  yum repo (mrepo.repo) file with "http" baseurl
+  # vim mrepo.repo 
+  press key "i" - insert mode.
+  [BaseOS_http]
+  name = Red Hat Enterprise Linux version 8.1 
+  baseurl= http://192.168.226.129/repo/rhel8.1/BaseOS
+  gpgcheck = 0
+  enabled = 1
+  
+  [AppStream_http]
+  name = Red Hat Enterprise Linux version 8.1 
+  baseurl= http://192.168.226.129/repo/rhel8.1/AppStream
+  gpgcheck = 0
+  enabled = 1
+  
+  
+  
+  NOte: "192.168.226.129" - to get IP address  (This IP where you have configued YUM repo).
+  
+  # ifconfig |grep inet | grep 192 
   
   
   
