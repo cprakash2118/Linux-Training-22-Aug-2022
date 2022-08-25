@@ -100,14 +100,33 @@ Login as root user.
 # mkdir   -p /var/www/html/repo/rhel8.1
 # cp -rv /run/media/root/RHEL8/*   /var/www/html/repo/rhel8.1/
 
+Note: ONce copied then crate repo.
+
+# cd /etc/yum.repos.d/
+# ls -l
+# vim mrepo.repo 
+  press key "i" - insert mode.
+  [BaseOS]
+  Name = Red Hat Enterprise Linux version 8.1 
+  baseurl=file:///var/www/html/repo/rhel8.1/BaseOS
+  gpgcheck = 0
+  enabled = 1
+  
+  
+  [AppStream]
+  Name = Red Hat Enterprise Linux version 8.1 
+  baseurl=file:///var/www/html/repo/rhel8.1/BaseOS
+  gpgcheck = 0
+  enabled = 1
+  
+  :wq
+  
   
   
   
   
 
    
-   
-  
 
 
 
