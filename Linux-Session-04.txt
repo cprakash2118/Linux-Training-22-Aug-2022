@@ -1,0 +1,95 @@
+- Introduction to Enterprise Linux. 
+- Basic commands and concepts.
+- User & Group Management 
+- Permission Model
+
+### 
+#Files and concepts:-
+ /etc/passwd 
+ /etc/group
+ /etc/shadow 
+ /etc/login.def 
+ /etc/sudoers 
+ 
+# Command OPtion Arguments
+
+ - Command - It mean utility and almost every command having manual pages or help "--help" option for it's use instruction.
+ - Option - Which modified the behaviour of the command.
+ - Argument - Data which is needed to execute the command successfully.
+ 
+ 
+#Manual pages 
+ man 5 <file_name> (Eg: - man 5 password, man 5 sudoers etc).
+ man 1 <normal_used_command> (Eg: man 1 cp , man 1 mkdir - all commands under "/bin or /usr/bin").
+ man 8 <admon_related_command> (Eg: man 8 useradd , man 8 groupadd etc - all commands under "/sbin or /usr/sbin").
+
+# Help option 
+  command --help (usermod --help , chage --help etc). 
+ 
+###
+ 
+
+######################
+# Process Management:-
+  - What is Process ?
+  Explaination:- Program under execution called process or any running instence of the program is called process.
+  
+  What is program?
+  Explaination:- Set of instructions called program.
+  - Program must be having execuited permission then only any user can execute the program and it become process.
+  
+  NOte: ***
+   - Process associated with one UID (User who initiated the program execution), one or more GID (MIght be execution via Group access), it also having unique Process ID called PID and it also connected to it's parent process ID (PPID), including other useful informations (Like: State of the processes, Priority of the process, commands used, resources utilization by the processes etc).
+ 
+# listing of the processes.
+ 
+  NOte: If you list the processes using root or sudo account then you can get all required information.
+  
+  # ps -aef   (List all processes in the server).
+  # ps -aef | grep user1 (It mean, it will list all the proccesses running under user "user1").
+  # pkill -u user1 (it will kill all processes running under "user1).
+  
+ - Process State:- (Concepts - State of the process only w.r.t CPU).
+   - Running Processes (Program under execution, or porgram waiting for CPU to be available for execution).
+     Running processes represenated with flag "R".
+	 
+   - Sleeping states ("S" - Intruterruptible processess, "D" - Un-intruterruptible process, "I" state w.r.t systsem calls or Idle Kernel Threads).
+
+   - Stopped proccess (Not using any resource just paused).
+     Running processes represenated with flag "T". 
+
+   - Zombi Processes - Killed but still alive (It mean PID is still available.
+      Running processes represenated with flag "Z". 
+
+   
+   - Listing proccess with priority,state, usages, etc).
+   Below command gives you high CPU utilization. 
+  # ps -eo pcpu,pid,ppid,user,nice,comm,stat |head - 1; ps -eo pcpu,pid,ppid,user,nice,commm,stat | sort -nr | head -10
+  
+  Below command gives you high CPU utilization. 
+  # top (Press key "1" then press "q" to quit the top session (Tom session for monitoring purpose).
+  
+  NOte: - Execute below command only 3 times 
+  # sha1sum & 
+  # sha1sum & 
+  # sha1sun &
+  
+  # kill -9 <pid of sha1sum>   (Repete 3 time, as per the ).
+  
+  
+  
+  
+  
+  
+  
+
+   
+   
+  
+
+
+
+
+- Package Management 
+- Disk Management 
+- Boot Sequence 
