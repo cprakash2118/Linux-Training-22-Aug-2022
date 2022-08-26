@@ -84,7 +84,7 @@ point- single line how to create parttion.
 
 
 Note: ONce partition created then go for File System.
-#mkfs.ext4  d /dev/sdb1
+#mkfs.ext4   /dev/sdb1
 
 Once Partititon done then mount to a system.
 
