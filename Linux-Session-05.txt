@@ -204,6 +204,7 @@ Eg: Disk name - /dev/sdc
 NOte: ***
 - VG must be define the sixe of single "PE" 
 - SIngle PE size always in 2^i (i=2,3,4,5,6,7,8,9,10 etc).
+- # vgcreate  -s 64M vg_name /dev/sdc1 /dev/sdc2 
 
  posibilities = 4 , 8 , 16, 32, 64 
  
