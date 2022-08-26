@@ -100,7 +100,7 @@ blkid /dev/sdb1
 UUID-value     /mp   FS-type  defaults dump_freqency  FSCK.
 											0	0
 											
-# systectl daemon-reload
+# systemctl daemon-reload
 # lsblk   
 
 #############
