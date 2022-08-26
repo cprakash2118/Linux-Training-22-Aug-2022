@@ -250,6 +250,60 @@ LVM extend
 
 NOte: Size of the LVM will be extended.
 
+=========================
+LVM LAB 
+
+1)
+Add disk (/dev/sdc) with size 5GB
+Add disk (/dev/sdd) with size 7GB 
+
+2) 
+Create 2 primary partition on each disk 
+/dev/sdc1 - 2GB 
+/dev/sdc2 - 2GB 
+
+/dev/sdd1 - 3GB 
+/dev/sdd2 - 3GB
+
+
+3)
+use (/dev/sdc1 & /dev/sdc2) for Physical Volume 
+
+
+4) 
+Create Volume Group (name=vg_name_01) using /dev/sdc1 & /dev/sdc2 PV.
+PE size = 32M 
+
+
+5) 
+Create LVM with name lvm_name_01 using VOlume group ( name=vg_name_01)
+Size of the LVM is 2GB.
+
+7) 
+MOunt LVM with ext4 on /opt/oracle (/opt/oracle dir need to be created).
+
+6) 
+Extend LVM (name=lvm_name_01) such a way that exact size of final LVM must be 3GB.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
