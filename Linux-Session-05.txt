@@ -287,6 +287,49 @@ MOunt LVM with ext4 on /opt/oracle (/opt/oracle dir need to be created).
 Extend LVM (name=lvm_name_01) such a way that exact size of final LVM must be 3GB.
 
 
+===================================
+Linux boot Sequence :- 
+1) BIOS (Basic Input/Output System)
+   - When power initiated to system then BIOS also initiated POST service.
+   - POST - Power on Self Test
+   - Then once POST successfully complated then it read and execute the 1st 512 bytes of slected boot device.
+   - Boot Device (Using that system can be boot/install).
+      Eg: Harddisk, CD/DVD, USB stick, Network Boot using PXE supported boot devices.
+   - 1st 512 bytes carrying bootload (Again 1st 446 bytes carrying IPL - Initial Program Loader).
+   - Then It pass the signal to Boot Loader.
+
+2) BootLoader (GRub - Grand Unified Bootloader )
+   Bootloader is a software or source code which is responsible for to load any operating system.
+   /etc/grub2.cfg 
+   /boot/grub2/
+   /boot/iniramfs<akjhsdkja>   (init ram FS file)
+   /boot/vmlinez              
+   
+   
+3) Kernel: 
+    - Kernel which used initramfs file to load the device drivers and modules.
+	- Kernel will active the LVMS 
+	- Kernel will load the very 1st process (called systemd , PID=1).
+	
+4) Systemd/init 
+   Systemd the signal from kernel and start the targets.
+    - Default traget - /etc/systemd/system/default.target  
+	- systemctl will used as interface to manage the system processes.
+         
+
+
+
+
+
+
+
+
+   
+
+
+   
+	  
+
 
 
 
