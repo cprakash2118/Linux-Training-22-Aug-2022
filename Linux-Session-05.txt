@@ -167,6 +167,13 @@ MOunting
 # mount /dev/sda1 /mp_sda01 
 Same as other (repete it).
 
+blkid /dev/sda1 
+UUID 
+
+# vim /etc/fstab 
+
+<Device_name>   <Mount_Point>   <FleSystem>  <option>  FSCK (FileSystemCheck)   Dump-Frequency
+UUID=" "         /mp_sda1        ext4         defaults      0                        0
 
 
 
