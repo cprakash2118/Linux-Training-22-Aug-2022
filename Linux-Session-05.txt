@@ -188,7 +188,7 @@ Eg: Disk name - /dev/sdc
 ##Step 2) Physical Volume creation from Linux partition using below method.
 
 # pvcreate /dev/sdc1  /dev/sdc2 
-# pcs
+# pvs
 # pvscan 
 # pvdisplay 
 
