@@ -103,8 +103,14 @@ UUID-value     /mp   FS-type  defaults dump_freqency  FSCK.
 # systectl daemon-reload
 # lsblk   
 
-
-
+#############
+lab 
+- Attach 2 GB/GIB and 3 GB/GIB are attached.
+- over 2GB/GIB of disk make 4 primary partiition, each parttion 400MN.
+- Over 3GB of disk make 3 Primary of 100MIB each and 8 logical partition 100MiB (each).
+- make ext4 FS to all primary partition respective to (/sda_mp1 , /sda_mp2, /sda_mp3 and /sda_m4, /sdb_m5, /sdb6_mp6
+  /dev/sdb_mp7
+- Makr ext2 to all logical  partition. 
 
 
 
