@@ -1,0 +1,141 @@
+
+- Introduction to Enterprise Linux 
+- Basic commands and Linux concepts 
+- File and Directories operations.
+- Users and Group Management.
+- Permission model 
+- Processes Management 
+- Package Management.
+- Disk/File-System Management.
+###############
+
+- Disk/File-System Management.
+
+#Resources:-
+  CPU
+  Memeory 
+  IO devices (Disk/Storage part).
+
+# Listing disk on server.
+Old/Lagacy interface to manage disk on your servers - /usr/sbin/fdisk or /usr/sbin/gdisk etc 
+New interface to manage disk on your servers - /usr/sbin/parted 
+Basic commands for storage.
+# lsblk  or lsblk -fp
+# blkid <device_name_path> 
+  Eg:- blkid /dev/sda1 
+  
+# parted print /dev/sda 
+
+
+# Parttition, File System. and persistent mount points.
+ As per parttition schemes:-
+1) MBR parttition schemes.
+2) GPT per parttition schemes.
+
+
+1) MBR partition schemes:- 
+ Point-1.  As per MBR partition schemes maximum primary partitions can be create is 4.
+ Note: After 4 primary partitions, no partition can be created.
+ 
+ POint-2. As per point1 - if less than 4 (3 Primary & 1 Extended partition and Under extended partition only you can create Logical partition).
+ 
+ Point-3. Maximim  partitions can be 15.
+          3 - Primary partitions 
+		  1 - Extended parttion (All the remaining/required storage can be used by extended partition, so that when extended partiton create then under that logical partitions created and partitions count can be reached upto 15th.
+		  
+  Point-4. MBR support maximum partition size is 2TiB
+
+  Point-5. 1st 512 bytes for MBR called boot loader (GRub2).
+   NOte: GRand Unified Bootload version 2.
+   What is bootloader - Boootloader is a source code responsible to start OS.
+   
+ HOw to manage the partition using parted commands (/usr/sbin/parted).
+ 
+ parted print 
+ # parted -l 
+ # parted /dev/sdb print  
+ # parted /dev/sdb 
+ 
+ 
+ /dev/sdb (Taking example for this.
+ 
+  # parted /dev/sdb 
+  (parted) "print" then press Enter key  
+  
+Directly creating parttions.
+  
+  # parted /dev/sdb mklabel msdos   (MBR)
+  # parted /dev/sdb mklabel gpt     (GPT)
+  
+  # parted /dev/sdb 
+  (parted) "mkpart" then 'Enter' key.
+  Partition type? Primary/extended ? "primary" and then 'Enter' key .
+  FIle system type? [ext2]
+  "print"
+  Start? 2048s
+  End? 1025MB
+  quit
+  
+  #udevadm settle (To update to kernel that we have done some update to partition).
+
+
+point- single line how to create parttion.
+# parted /dev/sdb mkpart primary xfs 2048s 100MB  
+
+
+Note: ONce partition created then go for File System.
+#mkfs.ext4  d /dev/sdb1
+
+Once Partititon done then mount to a system.
+
+#mkdir /mp 
+# mount /dev/sdb1 /mp   (Temp mounting).
+
+
+Persistent mounting :-
+blkid /dev/sdb1 
+
+# vim /etc/fstab 
+
+UUID-value     /mp   FS-type  defaults dump_freqency  FSCK.
+											0	0
+											
+# systectl daemon-reload
+# lsblk   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+ 
+ 
+ 
+ 
+   
+   
+   
+ 
+
+
+
+
+
+
+
+
+ 
+
+  
