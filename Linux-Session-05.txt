@@ -195,7 +195,7 @@ Eg: Disk name - /dev/sdc
 
 ##Step 3) Creating Volume Group (VG) using Physical Volume.
 
-# vgcreate -n vg_name /dev/sdc1 /dev/sdc2 
+# vgcreate  vg_name /dev/sdc1 /dev/sdc2 
 # vgscan 
 # vgs
 # vgdisplay  
