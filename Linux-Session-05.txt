@@ -154,6 +154,8 @@ Verify disks
   End? 1600MB
   
 
+  #udevadm settle (To update to kernel that we have done some update to partition).
+
 # lsblk 
 # mkfs.ext4 /dev/sda1
 # mkfs.ext4 /dev/sda2
@@ -174,6 +176,102 @@ UUID
 
 <Device_name>   <Mount_Point>   <FleSystem>  <option>  FSCK (FileSystemCheck)   Dump-Frequency
 UUID=" "         /mp_sda1        ext4         defaults      0                        0
+
+===========================
+
+##Step1) We have created Linux partition via "parted" command.
+Eg: Disk name - /dev/sdc 
+
+/dev/sdc1 (2048MB)  +  /dev/sdc2 (1024MB)     - Linux partition.
+
+
+##Step 2) Physical Volume creation from Linux partition using below method.
+
+# pvcreate /dev/sdc1  /dev/sdc2 
+# pcs
+# pvscan 
+# pvdisplay 
+
+
+##Step 3) Creating Volume Group (VG) using Physical Volume.
+
+# vgcreate -n vg_name /dev/sdc1 /dev/sdc2 
+# vgscan 
+# vgs
+# vgdisplay  
+
+
+NOte: ***
+- VG must be define the sixe of single "PE" 
+- SIngle PE size always in 2^i (i=2,3,4,5,6,7,8,9,10 etc).
+
+ posibilities = 4 , 8 , 16, 32, 64 
+ 
+ 
+ 
+ Total Size = 4096 =(4GB)
+ Single size of PE is 64MB 
+ 
+ no of PE = 4096 / 64 
+ 
+##Step 4) Create LVM (Logical VOlume Manager) from previous VOlume group.
+ 
+ # lvcreate -l +400 -n lvm_name vg_name 
+ # lvs 
+ # lvscan 
+ # lvdisplay 
+ 
+
+## Step 5) Make file system and mount.
+#mkfs.ext4 <LVM_PATH> 
+#mkfs.ext4 /dev/vg_name/lv_name 
+
+# blkid  /dev/vg_name/lv_name 
+
+# vim /etc/fstab 
+<BLKID of LVM>   <MOunt_Point>  <FileSystem>  <Option> <fsck> <dump_freq>
+UUID="skjdfhkjsd"   /opt/IBM    ext4     defaults 0 0 
+
+:wq
+
+
+# mkdir /opt/IBM 
+
+# mount -a 
+
+# df -THP 
+
+===========
+LVM extend 
+
+# lvextend -l +50 /dev/vg_name/lv_name 
+# resize2fs /dev/vg_name/lv_name
+# df -THP 
+
+NOte: Size of the LVM will be extended.
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
